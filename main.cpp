@@ -7,9 +7,11 @@ using std::endl;
 
 //funcion de menú principal
 int menu();
-//
-
+//función de la pirámide
 void pyramid(int);
+//función 3
+void ejercicio3(double,double,double);
+
 
 int main(){
 
@@ -18,7 +20,7 @@ int main(){
 
   do{
     switch( opcion = menu()){
-       case 1:{
+       case 1:{//Pyramid
 	       n=0;
 	       cout << "Ingrese un valor n: " << endl;
 	       cin >> n;
@@ -28,33 +30,63 @@ int main(){
 	       }else{ 		  
 		  
 		    pyramid(n);
-	       }
-	      }//end case 1
+	           }
+	       }//end case 1
 	       break;
-       case 2:
-	       cout << "" << endl;
+       case 2:{//Logaritmo natural
 	       
+	       cout << "Ingrese el valor a aproximar: " << endl;
+    	       }
 	       break;
-       case 3: 
-	       cout << "" << endl;
+       case 3: {
+	       double m,p,y;
+	       
+	       cout << "Ingrese m:" << endl;
+	       cin >> m;
+	       cout << "Ingrese p: " << endl;
+	       cin >> p;
+	       cout << "Ingrese y: " << endl;
+	       cin >> y;
+	       
+	       ejercicio3(m,p,y);
+	       
+	       }
+	       break;
     }//end switch
   }while( opcion != 4 );
   return 0;
 }
 
+//función ejercicio 3
+void ejercicio3(double m, double p, double y){
+   //y=m*sqrt(x)
+   double x;
+   x=(y/m)*(y/m);
+   
+   while(x<y){
+      cout << "X " << x << endl;
+      x+=p;
+      
+   }
+   cout << "El valor de x es: " << x; 
+}
+
+//funcion de la pirámide
 void pyramid(int n){
-  int i,j,space;
-  int row = 2*(n+1);
+  int i, j, space;
+  int row = 2*( n + 1 );
    
   for( i = 1; i <= row; i++){
-     for(space = i; space < 3; space++){
+     for( space = i; space < 3; space++ ){
         cout << " ";
      }
-     for(j = 1; j <= (2*i-1);j++){
+     for(j = 1; j <= ( 2 * i - 1 ); j++ ){
         cout << "*";
      }
+     for( space = i; space < 3; space++ ){
+        cout << " ";
+     } 
      cout << "\n";
-  
   } 
 }
 
