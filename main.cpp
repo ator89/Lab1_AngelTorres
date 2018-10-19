@@ -67,48 +67,77 @@ int main(){
 }
 
 //función ejercicio 2 - Logaritmo natural
-int ejercicio2(int n){
+int ejercicio2(int numero){
    
-   int millar = n/1000;
-   int centena = (n - (millar*1000))/100;
-   int decena = (n - (millar*1000 + centena*100))/10;
-   int unidad = n - (millar*1000 + centena*100+decena*10);
    
-   cout << centena << endl;
    
-   int y = 0;
-   y=n;
-   int divisor=1;
-   int ct1=1;
-   int ct2=0;
+  
+   
+   
+   int y=0;
+   y=numero;
+   int dividor=1;
+   int count2=1;
+   int counter=0;
    while(y>10){
-      y=y/10;
-      if(y>10){
-         divisor = divisor * 10;
-	 ct2 = ct2 * 10;
-      }
-      if(y<10){
-      
-      }
-      ct1 = ct1 +1;
+ 	y=y/10;
+		
+	if(y>10){
+		dividor=dividor*10;
+		count2=count2*10;
+		
+	}
+	if(y<10){
+		dividor= dividor*1;
+		count2=count2*10;
+	}
+	counter = counter +1;
+		
+		
+	}
+   cout<< "Numero 1: " << dividor<<endl;
+   cout<< "Numero 2: " << count2<< endl;
+
+   int ver2 = numero;
+   ver2 = ver2/dividor;
+   cout<< "DIvision redondear: " << ver2<< endl;
+   ver2= ver2*dividor;
+   cout<< "Redondeado: " << ver2 << endl;
+   double ver3 = ver2;
+   double logaritmo=ver3/count2;
+   cout<<"EL logaritmo: "<< logaritmo<<endl;
+
+   cout<< endl;
+   cout<< endl;
+
+   double suma=0;
+   double resultado=0;
+   cout<< "Ln("<<numero<<") = ";
+
+   //Log 10
+   for(int i =0; i< counter; i++){
+	suma =suma+ log(10);
+		
+		
+	cout<<"log(10) + ";
    }
-   cout << "n1: " << divisor << endl;
-   cout << "n2: " << ct2 << endl;
 
-   int ver = n;
-   ver = ver/divisor;
-   cout << "Redondear divison: " << ver << endl;
-   ver2 = ver*divisor;
-   cout << "Redondeado: " << ver2<< endl;
-   double ver3=ver2;
-   double logaritmo=ver3/ct2;
-   cout << "Logarito: " << logaritmo << endl;
-   cout << endl << endl;
 
-   
-	
-   
-   
+  int contadorlogs2=0;
+  //Contador de la division de logaritmos
+  while(logaritmo>1.3){
+	logaritmo = logaritmo/2;
+	contadorlogs2 = contadorlogs2 +1; 
+	}
+	double suma2=0;
+	for(int j=0; j<contadorlogs2; j++){
+		suma2 = suma2 + log(2);
+		cout<< "Log(2) + ";
+	}
+	cout << "Log(" << logaritmo << ")";
+	resultado = suma + suma2 + log(logaritmo);
+	cout<< endl;
+    cout<<"Resultado: " << resultado<< endl; 
 }     
 
 //función ejercicio 3
