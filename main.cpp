@@ -10,7 +10,7 @@ int menu();
 //función de la pirámide
 void pyramid(int);
 //funcion ejercicio 2
-void ejercicio2(int);
+int ejercicio2(int);
 //función 3
 void ejercicio3(double,double,double);
 
@@ -67,16 +67,20 @@ int main(){
 }
 
 //función ejercicio 2 - Logaritmo natural
-void ejercicio2(int m){
-   int aux;
-
-   if(m>1000){
-      aux=m/1000;
-      m = m%1000;
-      cout << aux; 
-   }
-
-}
+int ejercicio2(int n){
+   
+   int millar = n/1000;
+   int centena = (n - (millar*1000))/100;
+   int decena = (n - (millar*1000 + centena*100))/10;
+   int unidad = n - (millar*1000 + centena*100+decena*10);
+   
+   cout << centena << endl;
+   
+    
+   
+   
+   
+}     
 
 //función ejercicio 3
 void ejercicio3(double m, double p, double y){
