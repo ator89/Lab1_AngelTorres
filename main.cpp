@@ -76,8 +76,37 @@ int ejercicio2(int n){
    
    cout << centena << endl;
    
-    
+   int y = 0;
+   y=n;
+   int divisor=1;
+   int ct1=1;
+   int ct2=0;
+   while(y>10){
+      y=y/10;
+      if(y>10){
+         divisor = divisor * 10;
+	 ct2 = ct2 * 10;
+      }
+      if(y<10){
+      
+      }
+      ct1 = ct1 +1;
+   }
+   cout << "n1: " << divisor << endl;
+   cout << "n2: " << ct2 << endl;
+
+   int ver = n;
+   ver = ver/divisor;
+   cout << "Redondear divison: " << ver << endl;
+   ver2 = ver*divisor;
+   cout << "Redondeado: " << ver2<< endl;
+   double ver3=ver2;
+   double logaritmo=ver3/ct2;
+   cout << "Logarito: " << logaritmo << endl;
+   cout << endl << endl;
+
    
+	
    
    
 }     
