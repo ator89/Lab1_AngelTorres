@@ -9,6 +9,8 @@ using std::endl;
 int menu();
 //función de la pirámide
 void pyramid(int);
+//funcion ejercicio 2
+void ejercicio2(int);
 //función 3
 void ejercicio3(double,double,double);
 
@@ -30,15 +32,22 @@ int main(){
 	       }else{ 		  
 		  
 		    pyramid(n);
-	           }
-	       }//end case 1
-	       break;
+	       }
+	    }//end case 1
+	    break;
        case 2:{//Logaritmo natural
-	       
+	       int m=0;
 	       cout << "Ingrese el valor a aproximar: " << endl;
-    	       }
-	       break;
-       case 3: {
+    	       cin >> m;
+
+	       if(m<=0){
+	          cout << "Ingrese un valor correcto" << endl;
+	       }else{
+	          ejercicio2(m);
+	       }
+	    }
+	    break;
+       case 3: {//función para aproximar un número
 	       double m,p,y;
 	       
 	       cout << "Ingrese m:" << endl;
@@ -50,11 +59,23 @@ int main(){
 	       
 	       ejercicio3(m,p,y);
 	       
-	       }
-	       break;
+	    }
+	    break;
     }//end switch
   }while( opcion != 4 );
   return 0;
+}
+
+//función ejercicio 2 - Logaritmo natural
+void ejercicio2(int m){
+   int aux;
+
+   if(m>1000){
+      aux=m/1000;
+      m = m%1000;
+      cout << aux; 
+   }
+
 }
 
 //función ejercicio 3
@@ -66,7 +87,6 @@ void ejercicio3(double m, double p, double y){
    while(x<y){
       cout << "X " << x << endl;
       x+=p;
-      
    }
    cout << "El valor de x es: " << x; 
 }
